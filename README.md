@@ -17,7 +17,7 @@ For example, the following configuration will accomplish two things:
 `bitbucket-pipelines.yml`:
 ```
 image:
-  name: mlaurie/aws-angular-builder
+  name: mlaurie/aws-angular-builder:latest
 
 clone:
   depth: 1

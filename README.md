@@ -14,7 +14,7 @@ $ docker run -it mlaurie/aws-angular-builder ng --version
 | (_| || | | || (_| || |_| || || (_| || |  |_____|| (__ | || |
  \__,_||_| |_| \__, | \__,_||_| \__,_||_|          \___||_||_|
                |___/
-@angular/cli: 1.0.0-beta.32.3
+@angular/cli: 1.0.0-rc.0
 node: 6.9.5
 os: linux x64
 ```
@@ -28,8 +28,9 @@ aws-cli/1.11.52 Python/2.7.9 Linux/4.4.0-62-generic botocore/1.5.15
  
 | Tag | Angular CLI | AWS CLI |
 |---|---|---|
-| `latest` | `1.0.0-beta.32.3`  | `1.11.52`  |
-| `1.0.0` | `1.0.0-beta.32.3`  | `1.11.52`  |
+| `latest` | `1.0.0-rc.0` | `1.11.52` |
+| `1.0.1` | `1.0.0-rc.0` | `1.11.52` |
+| `1.0.0` | `1.0.0-beta.32.3` | `1.11.52` |
 
 You can find more details about changes between versions in [CHANGELOG.md](https://github.com/MattLaurie/aws-angular-builder/blob/master/CHANGELOG.md).
 
@@ -77,8 +78,8 @@ pipelines:
           - sh ./deploy.sh
 ```
 
-Note it is recommended to replace `latest` in `mlaurie/aws-angular-builder:latest` with a specific tagged version listed 
-**Versions** above. 
+Note it is recommended to replace `latest` above in `name: mlaurie/aws-angular-builder:latest` with a specific tagged 
+  version. 
 
 `deploy.sh`:
 ```
@@ -93,7 +94,7 @@ aws s3 cp dist/ s3://$BUCKET_TARGET --recursive --acl public-read
 ```
 
 Where `$awsAccessKeyId`, `$awsSecretAccessKeyPassword` and `$awsBucketTarget` are environment variables specified 
-  within Bitbucket Pipelines.  It's recommended to use secret environment variables for the AWS credentials.
+  within Bitbucket Pipelines.  It is recommended to use secret environment variables for the AWS credentials.
 
 Note that both `bitbucket-pipelines.yml` and `deploy.sh` need to be within the repository.
 

@@ -6,14 +6,23 @@ ANGULAR_CLI_CURRENT=`grep "ENV ANGULAR_CLI_VERSION=" Dockerfile | cut -c 25-`
 AWSCLI_LATEST=`wget -qO- https://pypi.python.org/pypi/awscli/json | grep -E ' {8}"[0-9."]*": \[' | sort -V | tail -n 1 | tr -d ' ":['`
 ANGULAR_CLI_LATEST=`npm view @angular/cli version`
 
+echo "Checking for updates"
 if [[ "$AWSCLI_CURRENT" != "$AWSCLI_LATEST" ]] || [[ "$ANGULAR_CLI_CURRENT" != "$ANGULAR_CLI_LATEST" ]]; then
   if [[ "$ANGULAR_CLI_CURRENT" != "$ANGULAR_CLI_LATEST" ]]; then
 	echo "Angular CLI	$ANGULAR_CLI_CURRENT -> $ANGULAR_CLI_LATEST"
+  else
+    echo "Angular CLI	$ANGULAR_CLI_CURRENT"
   fi
   if [[ "$AWSCLI_CURRENT" != "$AWSCLI_LATEST" ]]; then
 	echo "AWS CLI		$AWSCLI_CURRENT -> $AWSCLI_LATEST"
+  else
+	echo "AWS CLI		$AWSCLI_CURRENT"
   fi
   echo "Run \"check-update.sh -u\" to update the Dockerfile"
+else
+  echo "Angular CLI	$ANGULAR_CLI_CURRENT"
+  echo "AWS CLI		$AWSCLI_CURRENT"
+  echo "All Dockerfile versions up to date"
 fi
 
 if [ "$1" = "-u" ]; then

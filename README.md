@@ -21,34 +21,30 @@ os: linux x64
 
 ```
 $ docker run -it mlaurie/aws-angular-builder aws --version
-aws-cli/1.11.56 Python/2.7.9 Linux/4.4.0-64-generic botocore/1.5.19
+aws-cli/1.11.57 Python/2.7.9 Linux/4.4.0-64-generic botocore/1.5.20
 ```
 
 ## Versions
  
 | Tag | Angular CLI | AWS CLI |
 |---|---|---|
-| `latest` | `1.0.0-rc.1` | `1.11.56` |
+| `latest` | `1.0.0-rc.1` | `1.11.57` |
+| `1.0.3` | `1.0.0-rc.1` | `1.11.57` |
 | `1.0.2` | `1.0.0-rc.1` | `1.11.56` |
 | `1.0.1` | `1.0.0-rc.0` | `1.11.52` |
 | `1.0.0` | `1.0.0-beta.32.3` | `1.11.52` |
 
 You can find more details about changes between versions in [CHANGELOG.md](https://github.com/MattLaurie/aws-angular-builder/blob/master/CHANGELOG.md).
 
-The `latest` version will always be updated as updates are made to the Angular CLI and AWS CLI tools.  A decision will 
-  be made in the future as to what changes in the underlying tools constitutes a major bump in this repositories 
-  version tag numbers.
- 
-While it is expected that the `latest` version will be the most commonly used version, it is recommended to use a 
-  specific tagged version in your automated builds to ensure that you are always using a known version of the tools.
+The `latest` version will always be updated in response to releases of the Angular CLI and AWS CLI tools.   
 
-To use a specific tagged version append it to the repository name e.g. `docker pull mlaurie/aws-angular-builder:1.0.0` for the 
-  `1.0.0` version.
+It is recommended to use a tagged version (e.g. `1.0.3`) within any continuous build system to ensure known versions of 
+  the tools are used.
 
 ## Example: Using with Bitbucket Pipelines
 
 The primary use case for this Docker container is to integrate with 
-  [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines) such that a project can be built and deployed 
+  [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines) such that an Angular project can be built and deployed 
   to S3.
   
 For example, the following configuration will accomplish two things:
@@ -59,7 +55,7 @@ For example, the following configuration will accomplish two things:
 `bitbucket-pipelines.yml`:
 ```
 image:
-  name: mlaurie/aws-angular-builder:latest
+  name: mlaurie/aws-angular-builder:1.0.3
 
 clone:
   depth: 1
@@ -75,12 +71,13 @@ pipelines:
       - step:
           script:
           - npm install
-          - ng build -prod -aot -e prod --stats-json
+          - ng build -prod -aot -e prod
           - sh ./deploy.sh
 ```
 
-Note it is recommended to replace `latest` above in `name: mlaurie/aws-angular-builder:latest` with a specific tagged 
-  version. 
+Note you can update the image version `mlaurie/aws-angular-builder:1.0.3` used to the tagged version you require.
+  You can use `latest` but please be aware that `latest` will track the latest versions of the tools which 
+  may contain breaking changes.
 
 `deploy.sh`:
 ```
@@ -98,4 +95,3 @@ Where `$awsAccessKeyId`, `$awsSecretAccessKeyPassword` and `$awsBucketTarget` ar
   within Bitbucket Pipelines.  It is recommended to use secret environment variables for the AWS credentials.
 
 Note that both `bitbucket-pipelines.yml` and `deploy.sh` need to be within the repository.
-

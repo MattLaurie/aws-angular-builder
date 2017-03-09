@@ -1,3 +1,14 @@
+<a name="1.0.5"></a>
+# [1.0.5](https://github.com/MattLaurie/aws-angular-builder/compare/1.0.4...1.0.5) (2017-03-10)
+
+### Bug Fixes
+
+* Moved AWS CLI install to end of Dockerfile due to frequency of updates
+
+### Features
+
+* Updated AWS CLI to [1.11.59](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#11159)
+
 <a name="1.0.4"></a>
 # [1.0.4](https://github.com/MattLaurie/aws-angular-builder/compare/1.0.3...1.0.4) (2017-03-09)
 

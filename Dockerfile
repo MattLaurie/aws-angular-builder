@@ -7,5 +7,5 @@ ENV ANGULAR_CLI_VERSION=1.0.0-rc.1
 RUN npm install -g \
 	@angular/cli@${ANGULAR_CLI_VERSION}
 
-ENV AWSCLI_VERSION=1.11.59
+ENV AWSCLI_VERSION=1.11.60
 RUN pip install awscli==${AWSCLI_VERSION}

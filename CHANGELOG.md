@@ -1,5 +1,16 @@
+<a name="1.0.21"></a>
+# [1.0.21](https://github.com/MattLaurie/aws-angular-builder/compare/1.0.20...1.0.21) (2017-04-08)
+
+### Bug Fixes
+
+* Fixed bad link in CHANGELOG.md
+
+### Features
+
+* Updated AWS CLI to [1.11.75](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#11175)
+
 <a name="1.0.20"></a>
-# [1.0.20](https://github.com/MattLaurie/aws-angular-builder/compare/1.0.19...1.0.18) (2017-04-07)
+# [1.0.20](https://github.com/MattLaurie/aws-angular-builder/compare/1.0.19...1.0.20) (2017-04-07)
 
 ### Bug Fixes
 

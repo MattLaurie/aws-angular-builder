@@ -13,14 +13,14 @@ $ docker run -it mlaurie/aws-angular-builder ng --version
  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
 /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
                |___/
-@angular/cli: 1.0.2
+@angular/cli: 1.0.3
 node: 6.10.1
 os: linux x64
 ```
 
 ```
 $ docker run -it mlaurie/aws-angular-builder aws --version
-aws-cli/1.11.83 Python/2.7.9 Linux/4.4.0-75-generic botocore/1.5.46
+aws-cli/1.11.84 Python/2.7.9 Linux/4.4.0-75-generic botocore/1.5.47
 ```
 
 ```
@@ -32,7 +32,8 @@ $ docker run -it mlaurie/aws-angular-builder yarn --version
  
 | Tag | Angular CLI | AWS CLI |
 |---|---|---|
-| `latest` | `1.0.2` | `1.11.83` |
+| `latest` | `1.0.3` | `1.11.84` |
+| `1.0.27` | `1.0.3` | `1.11.84` |
 | `1.0.26` | `1.0.2` | `1.11.83` |
 | `1.0.25` | `1.0.1` | `1.11.82` |
 | `1.0.24` | `1.0.0` | `1.11.80` |
@@ -82,7 +83,7 @@ For example, the following configuration will accomplish two things:
 `bitbucket-pipelines.yml`:
 ```
 image:
-  name: mlaurie/aws-angular-builder:1.0.26
+  name: mlaurie/aws-angular-builder:1.0.27
 
 clone:
   depth: 1
@@ -102,7 +103,7 @@ pipelines:
           - sh ./deploy.sh
 ```
 
-Note you can update the image version `mlaurie/aws-angular-builder:1.0.26` used to the tagged version you require.
+Note you can update the image version `mlaurie/aws-angular-builder:1.0.27` used to the tagged version you require.
   You can use `latest` but please be aware that `latest` will track the latest versions of the tools which 
   may contain breaking changes.
 

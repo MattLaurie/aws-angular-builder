@@ -3,9 +3,9 @@ FROM node:6
 RUN apt-get update && \
 	apt-get install -y python python-pip python-dev
 
-ENV ANGULAR_CLI_VERSION=1.0.3
+ENV ANGULAR_CLI_VERSION=1.0.4
 RUN npm install -g \
 	@angular/cli@${ANGULAR_CLI_VERSION}
 
-ENV AWSCLI_VERSION=1.11.86
+ENV AWSCLI_VERSION=1.11.89
 RUN pip install awscli==${AWSCLI_VERSION}

@@ -1,4 +1,15 @@
-<a name="1.0.30"></a>
+<a name="1.0.32"></a>
+# [1.0.32](https://github.com/MattLaurie/aws-angular-builder/compare/1.0.31...1.0.32) (2017-05-24)
+
+### Bug Fixes
+
+* Fixed bad anchor version number for 1.0.31 in CHANGELOG.md
+
+### Features
+
+* Updated AWS CLI to [1.11.91](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#11191)
+
+<a name="1.0.31"></a>
 # [1.0.31](https://github.com/MattLaurie/aws-angular-builder/compare/1.0.30...1.0.31) (2017-05-23)
 
 ### Bug Fixes

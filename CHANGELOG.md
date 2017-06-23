@@ -1,3 +1,14 @@
+<a name="1.1.9"></a>
+# [1.1.9](https://github.com/MattLaurie/aws-angular-builder/compare/1.1.8...1.1.9) (2017-06-23)
+
+### Changes
+
+### Bug Fixes
+
+### Features
+
+* Updated AWS CLI to [1.11.111](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#111111)
+
 <a name="1.1.8"></a>
 # [1.1.8](https://github.com/MattLaurie/aws-angular-builder/compare/1.1.7...1.1.8) (2017-06-22)
 

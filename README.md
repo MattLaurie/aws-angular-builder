@@ -13,14 +13,14 @@ $ docker run -it mlaurie/aws-angular-builder ng --version
  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
 /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
                |___/
-@angular/cli: 1.1.3
+@angular/cli: 1.2.0
 node: 6.11.0
 os: linux x64
 ```
 
 ```
 $ docker run -it mlaurie/aws-angular-builder aws --version
-aws-cli/1.11.113 Python/2.7.9 Linux/4.4.0-79-generic botocore/1.5.76
+aws-cli/1.11.115 Python/2.7.9 Linux/4.4.0-79-generic botocore/1.5.78
 ```
 
 ```
@@ -29,10 +29,11 @@ $ docker run -it mlaurie/aws-angular-builder yarn --version
 ```
 
 ## Versions
- 
+
 | Tag | Angular CLI | AWS CLI |
 |---|---|---|
-| `latest` | `1.1.3` | `1.11.113` |
+| `latest` | `1.2.0` | `1.11.115` |
+| `1.2.0` | `1.2.0` | `1.11.115` |
 | `1.1.11` | `1.1.3` | `1.11.113` |
 | `1.1.10` | `1.1.3` | `1.11.112` |
 | `1.1.9` | `1.1.3` | `1.11.111` |
@@ -84,7 +85,7 @@ You can find more details about changes between versions in [CHANGELOG.md](https
 
 The `latest` version will always be updated in response to releases of the Angular CLI and AWS CLI tools.
 
-It is recommended to use a tagged version (e.g. `mlaurie/aws-angular-builder:1.1.11`) within any continuous build system to 
+It is recommended to use a tagged version (e.g. `mlaurie/aws-angular-builder:1.2.0`) within any continuous build system to 
   ensure known versions of the tools are used.
 
 The latest stable version of Node will be used which is currently `6.11`.
@@ -103,7 +104,7 @@ For example, the following configuration will accomplish two things:
 `bitbucket-pipelines.yml`:
 ```
 image:
-  name: mlaurie/aws-angular-builder:1.1.11
+  name: mlaurie/aws-angular-builder:1.2.0
 
 clone:
   depth: 1
@@ -123,7 +124,7 @@ pipelines:
           - sh ./deploy.sh
 ```
 
-Note you can update the image version `mlaurie/aws-angular-builder:1.1.11` used to the tagged version you require.
+Note you can update the image version `mlaurie/aws-angular-builder:1.2.0` used to the tagged version you require.
   You can use `latest` but please be aware that `latest` will track the latest versions of the tools which 
   may contain breaking changes.
 

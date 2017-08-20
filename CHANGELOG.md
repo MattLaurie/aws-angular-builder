@@ -1,3 +1,17 @@
+<a name="1.3.2"></a>
+# [1.3.2](https://github.com/MattLaurie/aws-angular-builder/compare/1.3.1...1.3.2) (2017-08-21)
+
+### Changes
+
+* Removed old `-aot` option from example
+
+### Bug Fixes
+
+### Features
+
+* Updated Angular CLI to [1.3.1](https://github.com/angular/angular-cli/releases/tag/v1.3.1)
+* Updated AWS CLI to [1.11.136](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#111136)
+
 <a name="1.3.1"></a>
 # [1.3.1](https://github.com/MattLaurie/aws-angular-builder/compare/1.3.0...1.3.1) (2017-08-16)
 

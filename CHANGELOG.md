@@ -1,3 +1,15 @@
+<a name="1.3.4"></a>
+# [1.3.4](https://github.com/MattLaurie/aws-angular-builder/compare/1.3.3...1.3.4) (2017-09-01)
+
+### Changes
+
+### Bug Fixes
+
+### Features
+
+* Updated Angular CLI to [1.3.2](https://github.com/angular/angular-cli/releases/tag/v1.3.2)
+* Updated AWS CLI to [1.11.144](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#111144)
+
 <a name="1.3.3"></a>
 # [1.3.3](https://github.com/MattLaurie/aws-angular-builder/compare/1.3.2...1.3.3) (2017-08-23)
 

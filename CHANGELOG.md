@@ -1,3 +1,18 @@
+<a name="1.4.3"></a>
+# [1.4.3](https://github.com/MattLaurie/aws-angular-builder/compare/1.4.1...1.4.3) (2017-09-22)
+
+### Changes
+
+* Versions will now track the Angular CLI version
+* Skipped `1.4.2` to avoid confusion with Angular CLI `1.4.2`
+
+### Bug Fixes
+
+### Features
+
+* Updated Angular CLI to [1.4.3](https://github.com/angular/angular-cli/releases/tag/v1.4.3)
+* Updated AWS CLI to [1.11.158](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#111158)
+
 <a name="1.4.1"></a>
 # [1.4.1](https://github.com/MattLaurie/aws-angular-builder/compare/1.4.0...1.4.1) (2017-09-12)
 

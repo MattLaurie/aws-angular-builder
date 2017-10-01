@@ -1,3 +1,18 @@
+<a name="1.4.4"></a>
+# [1.4.4](https://github.com/MattLaurie/aws-angular-builder/compare/1.4.3...1.4.4) (2017-10-02)
+
+### Changes
+
+* Removed full version history in README.md - was getting confusing after change to pinning version numbers to Angular CLI
+* Added [VERSIONS.md](https://github.com/MattLaurie/aws-angular-builder/blob/master/VERSIONS.md) to contain full history
+
+### Bug Fixes
+
+### Features
+
+* Updated Angular CLI to [1.4.4](https://github.com/angular/angular-cli/releases/tag/v1.4.4)
+* Updated AWS CLI to [1.11.162](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#111162)
+
 <a name="1.4.3"></a>
 # [1.4.3](https://github.com/MattLaurie/aws-angular-builder/compare/1.4.1...1.4.3) (2017-09-22)
 

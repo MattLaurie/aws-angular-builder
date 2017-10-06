@@ -1,3 +1,15 @@
+<a name="1.4.5"></a>
+# [1.4.5](https://github.com/MattLaurie/aws-angular-builder/compare/1.4.4...1.4.5) (2017-10-07)
+
+### Changes
+
+### Bug Fixes
+
+### Features
+
+* Updated Angular CLI to [1.4.5](https://github.com/angular/angular-cli/releases/tag/v1.4.5)
+* Updated AWS CLI to [1.11.166](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#111166)
+
 <a name="1.4.4"></a>
 # [1.4.4](https://github.com/MattLaurie/aws-angular-builder/compare/1.4.3...1.4.4) (2017-10-02)
 

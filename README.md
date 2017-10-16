@@ -13,14 +13,14 @@ $ docker run -it mlaurie/aws-angular-builder ng --version
  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
 /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
                |___/
-@angular/cli: 1.4.6
+@angular/cli: 1.4.7
 node: 6.11.3
 os: linux x64
 ```
 
 ```
 $ docker run -it mlaurie/aws-angular-builder aws --version
-aws-cli/1.11.169 Python/2.7.9 Linux/4.10.0-35-generic botocore/1.7.24
+aws-cli/1.11.170 Python/2.7.9 Linux/4.10.0-35-generic botocore/1.7.24
 ```
 
 ```
@@ -32,7 +32,8 @@ $ docker run -it mlaurie/aws-angular-builder yarn --version
 
 | Tag | Angular CLI | AWS CLI |
 |---|---|---|
-| `latest` | `1.4.6` | `1.11.169` |
+| `latest` | `1.4.7` | `1.11.170` |
+| `1.4.7` | `1.4.7` | `1.11.170` |
 | `1.4.6` | `1.4.6` | `1.11.169` |
 | `1.4.5` | `1.4.5` | `1.11.166` |
 | `1.4.4` | `1.4.4` | `1.11.162` |
@@ -41,13 +42,13 @@ $ docker run -it mlaurie/aws-angular-builder yarn --version
 
 See [VERSIONS.md](https://github.com/MattLaurie/aws-angular-builder/blob/master/VERSIONS.md) for full version history.
 
-**Note** from `1.4.3` onwards the version will track the Angular CLI version.  e.g. `mlaurie/aws-angular-builder:1.4.6` will be using Angular CLI 1.4.6.  Let me know if this causes an issue.
+**Note** from `1.4.3` onwards the version will track the Angular CLI version.  e.g. `mlaurie/aws-angular-builder:1.4.7` will be using Angular CLI 1.4.7.  Let me know if this causes an issue.
 
 You can find more details about changes between versions in [CHANGELOG.md](https://github.com/MattLaurie/aws-angular-builder/blob/master/CHANGELOG.md).
 
 The `latest` version will always be updated in response to releases of the Angular CLI and AWS CLI tools.
 
-It is recommended to use a tagged version (e.g. `mlaurie/aws-angular-builder:1.4.6`) within any continuous build system to 
+It is recommended to use a tagged version (e.g. `mlaurie/aws-angular-builder:1.4.7`) within any continuous build system to 
   ensure known versions of the tools are used.
 
 The latest stable version of Node will be used which is currently `6.11`.
@@ -66,7 +67,7 @@ For example, the following configuration will accomplish two things:
 `bitbucket-pipelines.yml`:
 ```
 image:
-  name: mlaurie/aws-angular-builder:1.4.6
+  name: mlaurie/aws-angular-builder:1.4.7
 
 clone:
   depth: 1
@@ -86,7 +87,7 @@ pipelines:
           - sh ./deploy.sh
 ```
 
-Note you can update the image version `mlaurie/aws-angular-builder:1.4.6` used to the tagged version you require.
+Note you can update the image version `mlaurie/aws-angular-builder:1.4.7` used to the tagged version you require.
   You can use `latest` but please be aware that `latest` will track the latest versions of the tools which 
   may contain breaking changes.
 

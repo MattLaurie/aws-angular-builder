@@ -3,8 +3,13 @@
 A simple Docker container to build Angular apps with [Angular CLI](https://cli.angular.io/) and then push the resulting 
   build into [AWS](https://aws.amazon.com) environments such as [S3](http://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html).
   
-## Getting started
+## Status: Not up to date with Angular or AWS
+  
+Angular and AWS CLI have moved on a lot since the last update of this project.  There currently isn't any plan to bring this project up to date since I'm not currently using AWS and Angular.
 
+I will still keep this project and the Docker images available since they can still be useful for building older projects.
+  
+## Getting started
 ```
 $ docker run -it mlaurie/aws-angular-builder ng --version
     _                      _                 ____ _     ___

@@ -3,7 +3,7 @@
 AWSCLI_CURRENT=`grep "ENV AWSCLI_VERSION=" Dockerfile | cut -c 20-`
 ANGULAR_CLI_CURRENT=`grep "ENV ANGULAR_CLI_VERSION=" Dockerfile | cut -c 25-`
 
-AWSCLI_LATEST=`wget -qO- https://pypi.python.org/pypi/awscli/json | grep -E ' {8}"[0-9."]*": \[' | sort -V | tail -n 1 | tr -d ' ":['`
+AWSCLI_LATEST=`curl -s https://pypi.org/pypi/awscli/json | jq -r '.urls[] | .filename | select(. | endswith("gz"))' | grep -oP 'awscli-\K.*(?=\.tar\.gz)'`
 ANGULAR_CLI_LATEST=`npm view @angular/cli version`
 
 echo "Checking for updates"

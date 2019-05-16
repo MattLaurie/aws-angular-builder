@@ -1,3 +1,15 @@
+<a name="7.3.9"></a>
+# [7.3.9](https://github.com/MattLaurie/aws-angular-builder/compare/1.4.9...7.3.9) (2019-05-16)
+
+### Changes
+
+### Bug Fixes
+
+### Features
+
+* Updated Angular CLI to [7.3.9](https://github.com/angular/angular-cli/releases/tag/v7.3.9)
+* Updated AWS CLI to [1.16.159](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#116159)
+
 <a name="1.4.9"></a>
 # [1.4.9](https://github.com/MattLaurie/aws-angular-builder/compare/1.4.8...1.4.9) (2017-10-24)
 

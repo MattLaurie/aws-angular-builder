@@ -3,41 +3,44 @@
 A simple Docker container to build Angular apps with [Angular CLI](https://cli.angular.io/) and then push the resulting 
   build into [AWS](https://aws.amazon.com) environments such as [S3](http://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html).
   
-## Status: Not up to date with Angular or AWS
-  
-Angular and AWS CLI have moved on a lot since the last update of this project.  There currently isn't any plan to bring this project up to date since I'm not currently using AWS and Angular.
+## Status: Updated as of 16-May-2019
 
-I will still keep this project and the Docker images available since they can still be useful for building older projects.
+I need this project again so I'll be updating it to include the latest AWS and Angular versions.  A lot has changed since I last looked at AWS and Angular CLI tools so expect there to be problems.
+
+Note: If you are building this project yourself `check-update.sh` now requires `jq` (https://stedolan.github.io/jq/) to be installed.
   
 ## Getting started
 ```
 $ docker run -it mlaurie/aws-angular-builder ng --version
-    _                      _                 ____ _     ___
-   / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-  / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
- / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
-/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
-               |___/
-@angular/cli: 1.4.9
-node: 6.11.3
-os: linux x64
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
+
+Angular CLI: 7.3.9
+Node: 8.16.0
 ```
 
 ```
 $ docker run -it mlaurie/aws-angular-builder aws --version
-aws-cli/1.11.176 Python/2.7.9 Linux/4.10.0-37-generic botocore/1.7.34
+aws-cli/1.16.159 Python/2.7.13 Linux/4.15.0-48-generic botocore/1.12.149
 ```
 
 ```
 $ docker run -it mlaurie/aws-angular-builder yarn --version
-0.27.5
+1.15.2
 ```
 
 ## Versions
 
 | Tag | Angular CLI | AWS CLI |
 |---|---|---|
-| `latest` | `1.4.9` | `1.11.176` |
+| `latest` | `7.3.9` | `1.16.159` |
+| `7.3.9` | `7.3.9` | `1.16.159` |
 | `1.4.9` | `1.4.9` | `1.11.176` |
 | `1.4.8` | `1.4.8` | `1.11.173` |
 | `1.4.7` | `1.4.7` | `1.11.170` |

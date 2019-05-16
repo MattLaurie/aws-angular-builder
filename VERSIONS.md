@@ -4,7 +4,8 @@ Note from `1.4.3` onwards the version will track the Angular CLI version.  e.g. 
 
 | Tag | Angular CLI | AWS CLI |
 |---|---|---|
-| `latest` | `1.4.9` | `1.11.176` |
+| `latest` | `7.3.9` | `1.16.159` |
+| `7.3.9` | `7.3.9` | `1.16.159` |
 | `1.4.9` | `1.4.9` | `1.11.176` |
 | `1.4.8` | `1.4.8` | `1.11.173` |
 | `1.4.7` | `1.4.7` | `1.11.170` |

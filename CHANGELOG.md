@@ -1,3 +1,20 @@
+<a name="8.1.1"></a>
+# [8.1.1](https://github.com/MattLaurie/aws-angular-builder/compare/7.3.9...8.1.1) (2019-07-17)
+
+### Changes
+
+* Updated to Node 10 due to Angular CLI requirement
+* Updated `check-update.sh` to check for `jq` tool
+
+### Bug Fixes
+
+* `check-update.sh` was getting the latest Angular CLI version in an unreliable way.  Now use `npm show` and `jq` to get the latest version.
+
+### Features
+
+* Updated Angular CLI to [8.1.1](https://github.com/angular/angular-cli/releases/tag/v8.1.1)
+* Updated AWS CLI to [1.16.198](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#116198)
+
 <a name="7.3.9"></a>
 # [7.3.9](https://github.com/MattLaurie/aws-angular-builder/compare/1.4.9...7.3.9) (2019-05-16)
 

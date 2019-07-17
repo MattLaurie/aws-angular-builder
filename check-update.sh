@@ -1,10 +1,21 @@
 #!/bin/bash
 
+# Check jq is installed
+
+if ! [ -x "$(command -v jq)" ]; then
+  echo 'Error: jq is not installed' >&2
+  exit 1
+fi
+
+# Extract current versions from Dockerfile
+
 AWSCLI_CURRENT=`grep "ENV AWSCLI_VERSION=" Dockerfile | cut -c 20-`
 ANGULAR_CLI_CURRENT=`grep "ENV ANGULAR_CLI_VERSION=" Dockerfile | cut -c 25-`
 
+# Retrieve remote versions
+
 AWSCLI_LATEST=`curl -s https://pypi.org/pypi/awscli/json | jq -r '.urls[] | .filename | select(. | endswith("gz"))' | grep -oP 'awscli-\K.*(?=\.tar\.gz)'`
-ANGULAR_CLI_LATEST=`npm view @angular/cli version`
+ANGULAR_CLI_LATEST=`npm show @angular/cli dist-tags --json | jq -r '.latest'`
 
 echo "Checking for updates"
 if [[ "$AWSCLI_CURRENT" != "$AWSCLI_LATEST" ]] || [[ "$ANGULAR_CLI_CURRENT" != "$ANGULAR_CLI_LATEST" ]]; then

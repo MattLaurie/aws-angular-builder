@@ -3,15 +3,10 @@
 A simple Docker container to build Angular apps with [Angular CLI](https://cli.angular.io/) and then push the resulting 
   build into [AWS](https://aws.amazon.com) environments such as [S3](http://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html).
   
-## Status: Updated as of 16-May-2019
-
-I need this project again so I'll be updating it to include the latest AWS and Angular versions.  A lot has changed since I last looked at AWS and Angular CLI tools so expect there to be problems.
-
-Note: If you are building this project yourself `check-update.sh` now requires `jq` (https://stedolan.github.io/jq/) to be installed.
-  
 ## Getting started
+
 ```
-$ docker run -it mlaurie/aws-angular-builder ng --version
+$ docker run -it aws-angular-builder ng --version
 
      _                      _                 ____ _     ___
     / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
@@ -21,47 +16,78 @@ $ docker run -it mlaurie/aws-angular-builder ng --version
                 |___/
     
 
-Angular CLI: 7.3.9
-Node: 8.16.0
+Angular CLI: 8.1.1
+Node: 10.16.0
+OS: linux x64
+Angular: 
+... 
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.801.1
+@angular-devkit/core         8.1.1
+@angular-devkit/schematics   8.1.1
+@schematics/angular          8.1.1
+@schematics/update           0.801.1
+rxjs                         6.4.0
 ```
 
 ```
 $ docker run -it mlaurie/aws-angular-builder aws --version
-aws-cli/1.16.159 Python/2.7.13 Linux/4.15.0-48-generic botocore/1.12.149
+aws-cli/1.16.198 Python/2.7.13 Linux/4.15.0-54-generic botocore/1.12.188
 ```
 
 ```
 $ docker run -it mlaurie/aws-angular-builder yarn --version
-1.15.2
+1.16.0
 ```
 
 ## Versions
 
 | Tag | Angular CLI | AWS CLI |
 |---|---|---|
-| `latest` | `7.3.9` | `1.16.159` |
+| `latest` | `8.1.1` | `1.16.198` |
+| `8.1.1` | `8.1.1` | `1.16.198` |
 | `7.3.9` | `7.3.9` | `1.16.159` |
-| `1.4.9` | `1.4.9` | `1.11.176` |
-| `1.4.8` | `1.4.8` | `1.11.173` |
-| `1.4.7` | `1.4.7` | `1.11.170` |
-| `1.4.6` | `1.4.6` | `1.11.169` |
-| `1.4.5` | `1.4.5` | `1.11.166` |
-| `1.4.4` | `1.4.4` | `1.11.162` |
-| `1.4.3` | `1.4.3` | `1.11.158` |
-| `1.4.1` | `1.4.1` | `1.11.150` |
 
 See [VERSIONS.md](https://github.com/MattLaurie/aws-angular-builder/blob/master/VERSIONS.md) for full version history.
 
-**Note** from `1.4.3` onwards the version will track the Angular CLI version.  e.g. `mlaurie/aws-angular-builder:7.3.9` will be using Angular CLI 7.3.9.  Let me know if this causes an issue.
+**Note** from `1.4.3` onwards the version will track the Angular CLI version.  e.g. `mlaurie/aws-angular-builder:8.1.1` will be using Angular CLI 8.1.1.  Let me know if this causes an issue.
 
 You can find more details about changes between versions in [CHANGELOG.md](https://github.com/MattLaurie/aws-angular-builder/blob/master/CHANGELOG.md).
 
 The `latest` version will always be updated in response to releases of the Angular CLI and AWS CLI tools.
 
-It is recommended to use a tagged version (e.g. `mlaurie/aws-angular-builder:7.3.9`) within any continuous build system to 
+It is recommended to use a tagged version (e.g. `mlaurie/aws-angular-builder:8.1.1`) within any continuous build system to 
   ensure known versions of the tools are used.
 
 The latest stable version of Node will be used which is currently `6.11`.
+
+## Building it yourself
+
+The script `check-update.sh` will check for updates for Angular CLI and AWS CLI.  
+
+```
+$ ./check-update.sh
+Checking for updates
+Angular CLI	7.3.9 -> 8.1.1
+AWS CLI		1.16.159 -> 1.16.198
+Run "check-update.sh -u" to update the Dockerfile
+```
+
+Running `check-update.sh` with the `-u` option will update the `Dockerfile` with the updated versions.
+
+```
+$ ./check-update.sh -u
+Checking for updates
+Angular CLI	7.3.9 -> 8.1.1
+AWS CLI		1.16.159 -> 1.16.198
+Run "check-update.sh -u" to update the Dockerfile
+Updated Dockerfile with latest versions
+```
+
+Note this all relies on `jq` being installed.  See (https://stedolan.github.io/jq/) for details.
+
 
 ## Example: Using with Bitbucket Pipelines
 
@@ -77,7 +103,7 @@ For example, the following configuration will accomplish two things:
 `bitbucket-pipelines.yml`:
 ```
 image:
-  name: mlaurie/aws-angular-builder:7.3.9
+  name: mlaurie/aws-angular-builder:8.1.1
 
 clone:
   depth: 1
@@ -97,7 +123,7 @@ pipelines:
           - sh ./deploy.sh
 ```
 
-Note you can update the image version `mlaurie/aws-angular-builder:7.3.9` used to the tagged version you require.
+Note you can update the image version `mlaurie/aws-angular-builder:8.1.1` used to the tagged version you require.
   You can use `latest` but please be aware that `latest` will track the latest versions of the tools which 
   may contain breaking changes.
 
@@ -117,3 +143,4 @@ Where `$awsAccessKeyId`, `$awsSecretAccessKeyPassword` and `$awsBucketTarget` ar
   within Bitbucket Pipelines.  It is recommended to use secret environment variables for the AWS credentials.
 
 Note that both `bitbucket-pipelines.yml` and `deploy.sh` need to be within the repository.
+

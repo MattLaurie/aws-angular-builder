@@ -6,7 +6,7 @@ A simple Docker container to build Angular apps with [Angular CLI](https://cli.a
 ## Getting started
 
 ```
-$ docker run -it aws-angular-builder ng --version
+$ docker run -it mlaurie/aws-angular-builder ng --version
 
      _                      _                 ____ _     ___
     / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|

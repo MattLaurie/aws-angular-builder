@@ -15,8 +15,7 @@ $ docker run -it mlaurie/aws-angular-builder ng --version
  /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
                 |___/
     
-
-Angular CLI: 8.1.2
+Angular CLI: 8.2.1
 Node: 10.16.0
 OS: linux x64
 Angular: 
@@ -24,42 +23,38 @@ Angular:
 
 Package                      Version
 ------------------------------------------------------
-@angular-devkit/architect    0.801.2
-@angular-devkit/core         8.1.2
-@angular-devkit/schematics   8.1.2
-@schematics/angular          8.1.2
-@schematics/update           0.801.2
+@angular-devkit/architect    0.802.1
+@angular-devkit/core         8.2.1
+@angular-devkit/schematics   8.2.1
+@schematics/angular          8.2.1
+@schematics/update           0.802.1
 rxjs                         6.4.0
 ```
 
 ```
 $ docker run -it mlaurie/aws-angular-builder aws --version
-aws-cli/1.16.207 Python/2.7.13 Linux/4.15.0-55-generic botocore/1.12.197
-```
-
-```
-$ docker run -it mlaurie/aws-angular-builder yarn --version
-1.16.0
+aws-cli/1.16.217 Python/2.7.13 Linux/4.15.0-55-generic botocore/1.12.207
 ```
 
 ## Versions
 
 | Tag | Angular CLI | AWS CLI |
 |---|---|---|
-| `latest` | `8.1.2` | `1.16.207` |
+| `latest` | `8.2.1` | `1.16.217` |
+| `8.2.1` | `8.2.1` | `1.16.217` |
 | `8.1.2` | `8.1.2` | `1.16.207` |
 | `8.1.1` | `8.1.1` | `1.16.198` |
 | `7.3.9` | `7.3.9` | `1.16.159` |
 
 See [VERSIONS.md](https://github.com/MattLaurie/aws-angular-builder/blob/master/VERSIONS.md) for full version history.
 
-**Note** from `1.4.3` onwards the version will track the Angular CLI version.  e.g. `mlaurie/aws-angular-builder:8.1.2` will be using Angular CLI 8.1.2.  Let me know if this causes an issue.
+**Note** from `1.4.3` onwards the version will track the Angular CLI version.  e.g. `mlaurie/aws-angular-builder:8.2.1` will be using Angular CLI 8.2.1.  Let me know if this causes an issue.
 
 You can find more details about changes between versions in [CHANGELOG.md](https://github.com/MattLaurie/aws-angular-builder/blob/master/CHANGELOG.md).
 
 The `latest` version will always be updated in response to releases of the Angular CLI and AWS CLI tools.
 
-It is recommended to use a tagged version (e.g. `mlaurie/aws-angular-builder:8.1.2`) within any continuous build system to 
+It is recommended to use a tagged version (e.g. `mlaurie/aws-angular-builder:8.2.1`) within any continuous build system to 
   ensure known versions of the tools are used.
 
 The latest stable version of Node will be used which is currently `6.11`.
@@ -104,7 +99,7 @@ For example, the following configuration will accomplish two things:
 `bitbucket-pipelines.yml`:
 ```
 image:
-  name: mlaurie/aws-angular-builder:8.1.2
+  name: mlaurie/aws-angular-builder:8.2.1
 
 clone:
   depth: 1
@@ -124,7 +119,7 @@ pipelines:
           - sh ./deploy.sh
 ```
 
-Note you can update the image version `mlaurie/aws-angular-builder:8.1.2` used to the tagged version you require.
+Note you can update the image version `mlaurie/aws-angular-builder:8.2.1` used to the tagged version you require.
   You can use `latest` but please be aware that `latest` will track the latest versions of the tools which 
   may contain breaking changes.
 

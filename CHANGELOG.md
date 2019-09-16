@@ -1,3 +1,15 @@
+<a name="8.3.4"></a>
+# [8.3.4](https://github.com/MattLaurie/aws-angular-builder/compare/8.2.1...8.3.4) (2019-09-16)
+
+### Changes
+
+### Bug Fixes
+
+### Features
+
+* Updated Angular CLI to [8.3.4](https://github.com/angular/angular-cli/releases/tag/v8.3.4)
+* Updated AWS CLI to [1.16.238](https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst#116238)
+
 <a name="8.2.1"></a>
 # [8.2.1](https://github.com/MattLaurie/aws-angular-builder/compare/8.1.2...8.2.1) (2019-08-14)
 
